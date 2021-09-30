@@ -42,7 +42,29 @@ typedef Point_<float> Point2f;
 typedef Point_<double> Point2d;
 typedef Point2i	Point;
 
+```
 
+2. Size_ : width * height를 나타내는 class
+```c++
+template<typename _Tp> class Size_
+{
+public:
+	Size_();
+	Size_(_Tp x, _Tp y);
+	Size_(const Size_& sz);
 
+	Size_& operator = (const Size_& sz);
+
+	_Tp area() const; // 넓이 반환
+	bool empty() const; // 유효하지 않은 크기면 true return
+
+	_Tp width, height;
+};
+
+typedef Size_<int> Size2i;
+typedef Size_<long> Size2l;
+typedef Size_<float> Size2f;
+typedef Size_<double> Size2d;
+typedef Size2i Size;
 
 ```
