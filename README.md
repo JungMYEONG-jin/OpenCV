@@ -8,3 +8,41 @@ cv::imshow("image2", img2);
 //imshow와 waitkey는 연속호출
 cv::waitKey(); // key 입력 대기
 ```
+
+
+
+# OpenCV 의 클래스
+
+1. Point_ class : 2차원 평면좌표를 나타내는 class
+
+```c++
+
+template<typename _Tp> class Point_
+{
+public:
+	Point_();
+	Point_(_Tp x, _Tp y);
+	Point_(const Point_& pt);
+
+	Point_& operator = (const Point_& pt);
+
+	_Tp dot(const Point_& pt) const; // 두 점 사이의 내적
+	double ddot(const Point_& pt) const; // 내적을 double형 return
+	double cross(const Point_& pt) const; // 외적
+	bool inside(const Rect_<_Tp>& r) const; // 두점이 사각형 r 영역에 있는지 확인 함수
+
+	_Tp x, y;
+
+
+};
+
+typedef Point_<int> Point2i;
+typedef Point_<long> Point2l;
+typedef Point_<float> Point2f;
+typedef Point_<double> Point2d;
+typedef Point2i	Point;
+
+
+
+
+```
